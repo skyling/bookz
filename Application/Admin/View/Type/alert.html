@@ -1,0 +1,29 @@
+<extend name='Base/frame'/>
+<block name='body'>
+<div class="pd-20">
+	<form class="Huiform" action="<{:U()}>" method="post" id="form-type-alert">
+		修改分类：
+		<input type="hidden" name="id" value="<{$info.id}>"/>
+	 	<input class="input-text" style="width:250px" name='title' id="title" type="text" value="<{$info.title}>" placeholder="输入分类名称" datatype="*2-10" nullmsg="分类名称不能为空"/>
+	 	<input class="input-text" style="width:50px" name='sort' id="sort" type="text" value="<{$info.sort}>" placeholder="排序" datatype='n0-10'/>
+	 	<button type="submit" class="btn btn-success"><i class="icon-plus"></i>修改</button>
+	</form>
+</div>
+</block>
+<block name='script'>
+<script>
+	$(function(){
+	$("#form-type-alert").Validform({
+		tiptype:2,
+		ajaxPost:true,
+		callback:function(data){
+			if(data.status == 'y'){
+				//修改成功！		
+				//reload(1);
+				//TODO:关闭本窗口
+			}
+		},
+	});
+});
+</script> 
+</block>

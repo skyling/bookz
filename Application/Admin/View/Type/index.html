@@ -1,0 +1,54 @@
+<extend name="Base/frame"/>
+<block name='body'>
+<include file='Public/smallNav'/>
+<div class="pd-20 text-c">
+  <form class="Huiform" action="<{:U()}>" method="post" id="form-type-add">
+  	添加分类：
+  	<input class="input-text" style="width:250px" name='title' id="title" type="text" value="" placeholder="输入分类名称" datatype="*2-10" nullmsg="分类名称不能为空"/>
+    <input class="input-text" style="width:50px" name='sort' id="sort" type="text" value="" placeholder="排序" datatype='n0-10'/>
+    <button type="submit" class="btn btn-success" onClick='article_class_add(this);'><i class="icon-plus"></i> 添加</button>
+  </form>
+  <div class="article-class-list cl mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+      <thead>
+        <tr class="text-c">
+          <th width="25"><input type="checkbox" name="" value=""></th>
+          <th width="80">ID</th>
+          <th width="80">排序</th>
+          <th>分类名称</th>
+          <th>书本数量</th>
+          <th width="70">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<volist name='info' id='vo'>
+	      	<tr class="text-c">
+	          <td><input type="checkbox" name="" value=""></td>
+	          <td><{$vo.id}></td>
+	          <td><{$vo.sort}></td>
+	          <td class="text-l"><{$vo.title}></td>
+	          <td class="text-l"><{$vo.number}></td>
+	          <td class="f-14">
+	          <a title="编辑" href="javascript:;" onclick="article_class_edit('1','620','260','分类编辑','<{:U('alert',array('id'=>$vo[id]))}>')" style="text-decoration:none">
+	          <i class="icon-edit"></i></a> 
+	          <a title="删除" href="<{:U('delete',array('id'=>$vo[id]))}>"  class='ajax-get' style="text-decoration:none"><i class="icon-trash"></i></a></td>
+	        </tr>
+      	</volist>
+      </tbody>
+    </table>
+  </div>
+</div>
+</block>
+<block name="script">
+<script>
+$(function(){
+	$("#form-type-add").Validform({
+		tiptype:1,
+		ajaxPost:true,
+		callback:function(data){
+			reload(2000);
+		}
+	});
+});
+</script> 
+</block>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - bookz@localhost" uuid="ba3bade5-9e71-4d90-acfb-1d3d2dbef2ea">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="bookz"/>
+    <table name="bookz_admin" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="55So5oi3SUQ=" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12" def="Jyc=" remarks="55So5oi35ZCN"/>
+      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc=" remarks="5a+G56CB"/>
+      <column name="login" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="55m75b2V5qyh5pWw"/>
+      <column name="reg_ip" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="MA==" remarks="5rOo5YaMSVA="/>
+      <column name="reg_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5rOo5YaM5pe26Ze0"/>
+      <column name="last_login_ip" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="MA==" remarks="5pyA5ZCO55m75b2VSVA="/>
+      <column name="last_login_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5pyA5ZCO55m75b2V5pe26Ze0"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA==" remarks="5Lya5ZGY54q25oCB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_annotations" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bookid" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12" remarks="5Lmm5pysaWQ="/>
+      <column name="abstract" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5pGY6KaB"/>
+      <column name="content" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1" remarks="6K+75Lmm56yU6K6w"/>
+      <column name="photos" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5Zu+54mH"/>
+      <column name="author_user" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="6K+E6K665Lq6"/>
+      <column name="time" sqlType="CHAR" precision="19" scale="0" nullable="true" jdbcType="1" remarks="5pe26Ze0"/>
+      <column name="page_no" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6aG156CB"/>
+      <column name="create_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ==" remarks="54q25oCB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_bookinfo" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bookid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Lmm5pysaWQ="/>
+      <column name="title" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12" remarks="5Lmm5ZCN"/>
+      <column name="author" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12" remarks="5L2c6ICF"/>
+      <column name="price" sqlType="FLOAT UNSIGNED" precision="6" scale="2" nullable="true" jdbcType="7" remarks="5Lu35qC8"/>
+      <column name="pubdate" sqlType="VARCHAR" precision="16" scale="0" nullable="true" jdbcType="12" remarks="5Ye654mI5pel5pyf"/>
+      <column name="images" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5bCB6Z2i5Zu+54mH6ZuG"/>
+      <column name="publisher" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5Ye654mI56S+"/>
+      <column name="create_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="isbn" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="SVNCTg=="/>
+      <column name="update_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5L+u5pS55pe26Ze0"/>
+      <column name="status" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ==" remarks="54q25oCB"/>
+      <column name="catalog" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5Lmm5pys566A5LuL"/>
+      <column name="summary" sqlType="TINYTEXT" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5pGY6KaB"/>
+      <column name="author_intro" sqlType="TINYTEXT" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5L2c6ICF566A5LuL"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_booklist" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5p2l5rqQ"/>
+      <column name="typeid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5YiG57G7aWQ="/>
+      <column name="tagid" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5YiG57G75qCH562+"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5Lmm5pys5ZCN56ew"/>
+      <column name="brief" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="566A5LuL"/>
+      <column name="annocount" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="56yU6K6w5p2h5pWw"/>
+      <column name="vol" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5pyf5pWw"/>
+      <column name="bookid" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6LGG55Oj5Zu+5LmmaWQ="/>
+      <column name="today" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12" remarks="5a+55bqU5LuK5aSp55qE5pel5pyf"/>
+      <column name="create_time" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="update_time" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5pu05paw5pe26Ze0"/>
+      <column name="view" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5L2/55So5qyh5pWw"/>
+      <column name="annopage" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="6K+75Lmm56yU6K6w6aG15pWw"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="54q25oCB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_dbjson" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="57G75Z6L"/>
+      <column name="url" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="6I635Y+W6LGG55Oj5pe255qEdXJs"/>
+      <column name="data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1" remarks="6LGG55Oj6I635Y+WanNvbuaVsOaNrg=="/>
+      <column name="create_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_json" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="jtype" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" remarks="a2V55a+55bqU55qE57G75Z6L"/>
+      <column name="infotype" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" remarks="57G75Z6L"/>
+      <column name="jkey" sqlType="VARCHAR" precision="254" scale="0" nullable="true" jdbcType="12" remarks="5Y+C5pWw"/>
+      <column name="json" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="anNvbuagvOW8j+aVsOaNrg=="/>
+      <column name="vol" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5pyf5pWw"/>
+      <column name="brief" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="566A5LuL"/>
+      <column name="create_time" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="belong_data" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5omA5bGe5pel5pyf"/>
+      <column name="update_time" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5pu05paw5pel5pyf"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_type" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5YiG57G7SUQ=" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12" def="JzAn" remarks="5YiG57G75ZCN56ew"/>
+      <column name="number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5pWw6YeP"/>
+      <column name="create_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="update_time" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5pu05paw5pe26Ze0"/>
+      <column name="sort" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA==" remarks="5o6S5bqP"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ==" remarks="5YiG57G754q25oCB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="bookz_user" schema="" catalog="bookz" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="openid" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3b3Blbmlk"/>
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="55So5oi3b3Blbmlk"/>
+      <column name="requiretime" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K+35rGC55qE5qyh5pWw"/>
+      <column name="create_time" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>

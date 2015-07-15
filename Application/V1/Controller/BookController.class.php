@@ -11,29 +11,35 @@ class BookController extends BaseController
      * @since 2015年5月11日 下午5:57:31
      */
     public function today(){
+
         $map = array(
             'today' => date('Y-m-d',time()),//获取今天时间
             'status' => 1,//状态
         );
-        $m = M('Booklist');
-        $listdata = $m->where($map)->find();//获取书本基本信息
+        $m_booklist = M('Booklist');
+        $field = 'brief,vol,bookid,today';
+        $listdata = $m_booklist->field($field)->where($map)->find();//获取书本基本信息
         if(!$listdata){
             $this->ajaxReturn(C('AJAX_STATUS.ERROR'));
         }
-        $i = M('Bookinfo');
+
+        $m_bookinfo = D('Bookinfo');
         $imap = array(
             'status' => 1,
             'bookid' => $listdata['bookid'],
         );
-
-        $infodata = $i->where($imap)->find();
+        $field = 'bookid,title,author,price,pubdate,images,publisher,isbn10,isbn13,catalog,summary,author_intro';
+        $infodata = $m_bookinfo->field($field)->where($imap)->find();
 
         if(!$infodata){
             $this->ajaxReturn(C('AJAX_STATUS.ERROR'));
         }
-        $data['data'] = json_decode($infodata['json']);
-        $data['extra'] = array('vol'=>$infodata['vol'],'date'=>$listdata['today'],'brief'=>$infodata['brief']);
-        $this->ajaxReturn(return_data_format($data));
+        $infodata['id'] = $infodata['bookid'];
+        unset($infodata['bookid']);
+        $ret = json_encode( $infodata);
+        $data['book'] = json_decode($ret);
+        $data['extra'] = array('vol'=>$listdata['vol'],'date'=>$listdata['today'],'brief'=>$listdata['brief']);
+        $this->ajaxReturn(return_data_format($data), 'JSON');
     }
     
     /**

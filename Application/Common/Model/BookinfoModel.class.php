@@ -11,7 +11,7 @@ class BookinfoModel extends Model{
     //自动验证
     protected $_validate = array(
         //array('isbn', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
-        array('isbn', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
+        array('isbn13', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
     );
     
     //自动完成
@@ -46,7 +46,13 @@ class BookinfoModel extends Model{
         echo $this->buildSql();
         return $data ? $data : FALSE;
     }
-    
+
+
+    function _after_find(&$data,$options){
+        $data['author'] = json_decode($data['author']);
+        $data['images'] = json_decode($data['images']);
+
+    }
 }
 
 ?>

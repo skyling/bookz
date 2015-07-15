@@ -36,5 +36,8 @@ function return_data_format($data,$info='',$status=''){
     }else{
         $ret['data'] = $data;
     }
+    if(isset($ret['book'])){
+        unset($ret['data']);
+    }
     return $ret;
 }

@@ -29,13 +29,10 @@ class BooklistModel extends Model
     public function getItem($id, $field="*", $where=FALSE){
         !$where || $this->where($where);
         $this->field($field);
-        $data = $this->find($id);
+        $data =  $id ? $this->find($id) : $this->find();
         return $data ? $data : FALSE;
     }
 
-    function _after_find(){
-
-    }
 }
 
 ?>

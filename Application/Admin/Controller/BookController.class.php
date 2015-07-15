@@ -56,7 +56,8 @@ class BookController extends BaseController
                 "pubdate"=> $doubanJson->pubdate,
                 "images"=> $doubanJson->images,
                 "publisher"=> $doubanJson->publisher,
-                "isbn"=> $doubanJson->isbn13,
+                "isbn10"=> $doubanJson->isbn10,
+                "isbn13"=> $doubanJson->isbn13,
                 "catalog"=> $doubanJson->catalog,
                 "summary"=> $doubanJson->summary,
                 "author_intro"=> $doubanJson->author_intro,
@@ -88,7 +89,7 @@ class BookController extends BaseController
         $field = 'uid,typeid,tagid,title,brief,annocount,vol,bookid,today,create_time,update_time,view,annopage,status';
         $data_list = $m_booklist->getItem($id, $field);
         var_dump($data_list);
-        $field = 'title,author,price,pubdate,images,publisher,create_time,isbn,update_time,status,catalog,summary,author_intro';
+        $field = 'title,author,price,pubdate,images,publisher,create_time,isbn10,isbn13,update_time,status,catalog,summary,author_intro';
         $data_info = $m_bookinfo->getItem($data_list['bookid'], $field);
         $data = array_merge($data_list, $data_info);
         $this->assign('info', $data);

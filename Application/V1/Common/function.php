@@ -31,7 +31,8 @@ function return_data_format($data,$info='',$status=''){
     $ret = C('AJAX_STATUS.SUCCESS');
     $ret['info'] = empty($info) ? $ret['info'] : $info;
     $ret['status'] = empty($info) ? $ret['status'] : $status;
-    if(count($data)>1){
+
+    if(isset($data['extra'])){
         $ret = array_merge($ret, $data);
     }else{
         $ret['data'] = $data;

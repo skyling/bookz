@@ -31,21 +31,27 @@ class BookController extends BaseController
 
         if(IS_POST || IS_AJAX){
             //Booklist 数据添加
-            $m_booklist = D('Booklist');
-            $data_list = $m_booklist->create();//获取提交数据
-            if(!$data_list) $this->ajaxReturn(ajax_return_data(1, $m_booklist->getError()), 'JSON');//返回错误信息
             $s_douban = D('Douban', 'Service');//豆瓣服务
-
+            $data_post = I('post.');
             //获取书本信息
-            $doubanJson = $s_douban->getBookInfoByIsbn(I('post.isbn'));//获取豆瓣请求数据
+            $doubanJson = $s_douban->getBookInfoByIsbn($data_post['isbn']);//获取豆瓣请求数据
             if(!$doubanJson->id)  $this->ajaxReturn(C('AJAX_STATUS.DB_FAULT'), 'JSON');
 
             //写入BookList
-            $data_list['bookid'] = $doubanJson->id;
-            if(!$m_booklist->create($data_list)) $this->ajaxReturn(ajax_return_data(1, $m_booklist->getError()), 'JSON');//返回错误信息
 
+            $data_post['bookid'] = $doubanJson->id;
+
+            $m_booklist = D('Booklist');
+            $data_list = $m_booklist->create($data_post);//获取提交数据
+            if(!$data_list) $this->ajaxReturn(ajax_return_data(1, $m_booklist->getError()), 'JSON');//返回错误信息
+//            var_dump(I('post.'));
+//            var_dump($data_list);
+
+//            if(!($data_list = $m_booklist->create($data_list))) $this->ajaxReturn(ajax_return_data(1, $m_booklist->getError()), 'JSON');//返回错误信息
+//            return;
             $m_booklist->startTrans();   //开启事务
             $m_booklist->add($data_list);//添加数据
+//            var_dump($data_list);
             //写入BookInfo
             $m_bookinfo = D('Bookinfo');
             $data_info = array(
@@ -63,7 +69,9 @@ class BookController extends BaseController
                 "author_intro"=> $doubanJson->author_intro,
             );
             $data_info = $m_bookinfo->create($data_info);
-            if($m_bookinfo->add($data_info)){
+//            var_dump($data_info);
+//            return;
+            if($data_info && $m_bookinfo->add($data_info)){
                 $m_booklist->commit();//提交
                 $this->ajaxReturn(ajax_return_data(0, '添加成功！'), 'JSON');
             }else{

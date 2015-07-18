@@ -1,0 +1,38 @@
+[ 2015-07-18T22:14:15+08:00 ] 127.0.0.1 /index.php/Admin/Book/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+NOTIC: [2048] Declaration of Admin\Controller\BookController::delete() should be compatible with Admin\Controller\BaseController::delete($model = Admin\Controller\CONTROLLER_NAME, $id = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::get() should be compatible with Think\Controller::get($name = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [8] Undefined index: bookid F:\WEB\www_apache\phpstrom\2\ThinkPHP\Library\Think\Model.class.php 第 1285 行.
+NOTIC: [8] curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead F:\WEB\www_apache\phpstrom\2\Application\Common\Service\Service.class.php 第 22 行.
+NOTIC: [2] implode(): Invalid arguments passed F:\WEB\www_apache\phpstrom\2\Application\Common\Common\function.php 第 23 行.
+
+[ 2015-07-18T22:14:34+08:00 ] 127.0.0.1 /index.php/Admin/Book/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+NOTIC: [2048] Declaration of Admin\Controller\BookController::delete() should be compatible with Admin\Controller\BaseController::delete($model = Admin\Controller\CONTROLLER_NAME, $id = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::get() should be compatible with Think\Controller::get($name = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [8] Undefined index: bookid F:\WEB\www_apache\phpstrom\2\ThinkPHP\Library\Think\Model.class.php 第 1285 行.
+
+[ 2015-07-18T22:16:01+08:00 ] 127.0.0.1 /index.php/Admin/Book/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Controller\BookController::delete() should be compatible with Admin\Controller\BaseController::delete($model = Admin\Controller\CONTROLLER_NAME, $id = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::get() should be compatible with Think\Controller::get($name = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [8] Undefined index: bookid F:\WEB\www_apache\phpstrom\2\ThinkPHP\Library\Think\Model.class.php 第 1285 行.
+
+[ 2015-07-18T22:16:13+08:00 ] 127.0.0.1 /index.php/Admin/Book/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+NOTIC: [2048] Declaration of Admin\Controller\BookController::delete() should be compatible with Admin\Controller\BaseController::delete($model = Admin\Controller\CONTROLLER_NAME, $id = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [2048] Declaration of Admin\Controller\BookController::get() should be compatible with Think\Controller::get($name = '') F:\WEB\www_apache\phpstrom\2\Application\Admin\Controller\BookController.class.php 第 5 行.
+NOTIC: [8] Undefined index: bookid F:\WEB\www_apache\phpstrom\2\ThinkPHP\Library\Think\Model.class.php 第 1285 行.
+

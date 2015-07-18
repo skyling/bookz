@@ -1,0 +1,33 @@
+[ 2015-07-16T23:10:13+08:00 ] 127.0.0.1 /v1/book/week/v/test
+ERR: Think\Controller:getItems方法不存在！
+
+[ 2015-07-16T23:24:09+08:00 ] 127.0.0.1 /v1/book/toady/v/test
+ERR: 非法操作:toady
+
+[ 2015-07-16T23:24:16+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'brief' in 'field list'
+
+[ 2015-07-16T23:24:41+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'brief' in 'field list'
+
+[ 2015-07-16T23:25:02+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vol' in 'field list'
+
+[ 2015-07-16T23:25:03+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vol' in 'field list'
+
+[ 2015-07-16T23:25:24+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vol' in 'field list'
+
+[ 2015-07-16T23:25:34+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vol' in 'field list'
+
+[ 2015-07-16T23:26:14+08:00 ] 127.0.0.1 /v1/book/today/v/test
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vol' in 'field list'
+
+[ 2015-07-16T23:28:17+08:00 ] 127.0.0.1 /v1/book/toady/v/test
+ERR: 非法操作:toady
+
+[ 2015-07-16T23:35:25+08:00 ] 127.0.0.1 /v1/book/toady/v/test
+ERR: 非法操作:toady
+

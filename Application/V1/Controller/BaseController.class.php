@@ -22,15 +22,17 @@ class BaseController extends Controller
             $params = $_POST;
             $sign = $params['sign'];
             if(empty($sign)){
-
+                sleep(1);
                 $this->ajaxReturn(return_data_format('获取信息失败', '4002',  0),'JSON');
             }
             unset($params['sign']);
             $t = sign($params);
             if(strcasecmp($sign,$t)!=0){
+                sleep(1);
                 $this->ajaxReturn(return_data_format('获取信息失败', '4002', 0),'JSON');
             }
         }else{
+            sleep(1);
             $this->ajaxReturn(return_data_format('获取信息失败', '4002', 0),'JSON');
         }
     }

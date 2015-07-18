@@ -11,7 +11,7 @@ class BookinfoModel extends Model{
     //自动验证
     protected $_validate = array(
         //array('isbn', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
-        array('isbn13', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
+        //array('isbn13', '', '该书已存在！', self::MUST_VALIDATE, 'unique', self::MODEL_BOTH),
     );
     
     //自动完成
@@ -27,7 +27,7 @@ class BookinfoModel extends Model{
      * 添加书籍
      * @param $data
      */
-    public function addBook($data){
+    public function addBook(){
         echo "add";
     }
 

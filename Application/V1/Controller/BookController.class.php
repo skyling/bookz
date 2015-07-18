@@ -18,9 +18,11 @@ class BookController extends BaseController
         $listField = 'vol,bookid,today,brief';
         $infoField = 'bookid,title,author,price,pubdate,images,publisher,isbn10,isbn13,catalog,summary,author_intro';
         $this->getItem($map, $listField, $infoField);
-
     }
 
+    /**
+     * 获取一周数据
+     */
     public function week(){
         //标题,书本图片,出版社,期数,出版日期,ISBN作者 7
 
@@ -32,7 +34,26 @@ class BookController extends BaseController
         $data = $m_booklist->distinct(true)->field('id, today')->order($order)->limit($limit)->select();
         //var_dump($data);
         foreach($data as $item){
-            $info[] = $this->getItem( array('id'=>$item['id']), $listField, $infoField, true);
+            $info['book'][] = $this->getItem( array('id'=>$item['id']), $listField, $infoField, true);
+        }
+        $this->ajaxReturn(return_data_format($info));
+    }
+
+    /**
+     * 获取一个月的图书
+     */
+    public function month(){
+        $str = date('Y-m', mktime ( 0 ,  0 ,  0 ,  date('m')-1 ,  date('d') ,  date('Y') ));
+        $map['today'] = array('LIKE', $str . '%');
+        $m_booklist = D('Booklist');
+
+        $listField = 'today,bookid,id,brief,vol';
+        $infoField = 'isbn10,isbn13,title,pubdate,images,publisher,author';
+        $order = 'today desc';
+        $data = $m_booklist->where($map)->order($order)->select();
+
+        foreach($data as $item){
+            $info['book'][] = $this->getItem( array('id'=>$item['id']), $listField, $infoField, true);
         }
         $this->ajaxReturn(return_data_format($info));
     }
@@ -50,8 +71,8 @@ class BookController extends BaseController
         ! $id || $map['bookid'] = $id;
         $map['status'] = 1;//状态
 
-        $m_booklist = M('Booklist');
-        $listdata = $m_booklist->field($listField)->where($map)->find();
+        $m_booklist = D('Booklist');
+        $listdata = $m_booklist->field($listField)->order('id desc')->where($map)->find();
         //获取书本基本信息
         if(!$listdata){
             $this->ajaxReturn(C('AJAX_STATUS.ERROR'));
@@ -62,7 +83,7 @@ class BookController extends BaseController
         );
 
         $infodata = $m_bookinfo->field($infoField)->where($imap)->find();
-
+ 
         if(!$infodata){
             $this->ajaxReturn(C('AJAX_STATUS.ERROR'));
         }
@@ -81,6 +102,7 @@ class BookController extends BaseController
                 'date'=>$listdata['today'],
                 'brief'=>$listdata['brief']
             );
+
             $this->ajaxReturn(return_data_format($data), 'JSON');
         }
 

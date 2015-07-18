@@ -32,13 +32,19 @@ function return_data_format($data,$info='',$status=''){
     $ret['info'] = empty($info) ? $ret['info'] : $info;
     $ret['status'] = empty($info) ? $ret['status'] : $status;
 
-    if(isset($data['extra'])){
+    if(is_array($data)){
         $ret = array_merge($ret, $data);
+        unset($ret['data']);
+    }elseif(!empty($data)){
+        $ret['data'] = $data;
+    }
+    /*
+    if(isset($data['extra'])){
     }else{
         $ret['data'] = $data;
     }
     if(isset($ret['book'])){
         unset($ret['data']);
-    }
+    }*/
     return $ret;
 }
